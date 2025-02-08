@@ -4,9 +4,9 @@ public class User {
 
     private Long Id;
     private String email;
-    private Long passwordHash;
+    private String passwordHash;
 
-    public User(String email, Long passwordHash){
+    public User(String email, String passwordHash){
         this.email = email;
         this.passwordHash = passwordHash;
     }
@@ -27,11 +27,11 @@ public class User {
         this.email = email;
     }
 
-    public Long getPasswordHash() {
+    public String getPasswordHash() {
         return passwordHash;
     }
 
-    public void setPasswordHash(Long passwordHash) {
+    public void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
     }
 
