@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name="users")
-@AllArgsConstructor
-@NoArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
 public class UserEntity {
     
     @Id
@@ -23,11 +23,15 @@ public class UserEntity {
     private String email;
 
     @Column(name = "passwordHash", nullable=false)
-    private Long passwordHash;
+    private String passwordHash;
 
-    public UserEntity(String email, Long passwordHash){
+    public UserEntity(String email, String passwordHash){
         this.email = email;
         this.passwordHash = passwordHash;
+    }
+
+    public UserEntity(){
+
     }
 
     public Long getId() {
@@ -46,11 +50,11 @@ public class UserEntity {
         this.email = email;
     }
 
-    public Long getPasswordHash() {
+    public String getPasswordHash() {
         return passwordHash;
     }
 
-    public void setPasswordHash(Long passwordHash) {
+    public void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
     }
 }
