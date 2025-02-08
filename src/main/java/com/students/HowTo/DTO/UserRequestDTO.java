@@ -3,7 +3,7 @@ package com.students.HowTo.DTO;
 public class UserRequestDTO {
 
     private String email;
-    private Long passwordHash;
+    private String passwordHash;
 
     public String getEmail() {
         return email;
@@ -13,11 +13,11 @@ public class UserRequestDTO {
         this.email = email;
     }
 
-    public Long getPasswordHash() {
+    public String getPasswordHash() {
         return passwordHash;
     }
 
-    public void setPasswordHash(Long passwordHash) {
+    public void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
     }
 }
