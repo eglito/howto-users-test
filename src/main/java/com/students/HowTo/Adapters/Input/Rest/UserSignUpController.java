@@ -20,24 +20,18 @@ public class UserSignUpController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/")
-    public String getPage() {
-        return "Test";
-    }
 
     @GetMapping(value = "/users")
     public ResponseEntity<List<UserDto>> getAllUsers(){
         return  ResponseEntity.ok(userService.getAllUsers());
     }
 
-
     @PostMapping(value = "/save")
-    public ResponseEntity<UserDto> createUser(@RequestBody UserRequestDTO userRequest){
+    public ResponseEntity<UserDto> createUser(@RequestBody UserRequestDTO userRequest) throws IllegalAccessException {
 
         UserDto userDto = userService.createUser(userRequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(userDto);
     }
-
 
     @PutMapping(value = "/update/{id}")
     public ResponseEntity<UserDto> updateUser(@PathVariable Long id, @RequestBody UserRequestDTO userRequest){
