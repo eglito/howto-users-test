@@ -5,5 +5,5 @@ import com.students.HowTo.DTO.UserRequestDTO;
 
 public interface UserServiceInterface {
 
-    UserDto createUser(UserRequestDTO userRequestDTO);
+    UserDto createUser(UserRequestDTO userRequestDTO) throws IllegalAccessException;
 }
